@@ -16,6 +16,6 @@ data class AddressBook(
     val name: String,
     val region: String,
     val city: String,
-    val contact: List<String>,
+    val contact: String,
     val notes: String
 )

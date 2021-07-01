@@ -17,7 +17,7 @@ data class SaveAddressBookRequest (
 
     @get:NotNull
     @get:Size(min = 1, max = 50)
-    val contact: List<String?>,
+    val contact: String?,
 
     @get:Size(min = 1, max = 100)
     val notes: String
