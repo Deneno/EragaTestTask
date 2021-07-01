@@ -1,4 +1,4 @@
-package com.Eraga.testTask3
+package com.eraga.testTask3
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

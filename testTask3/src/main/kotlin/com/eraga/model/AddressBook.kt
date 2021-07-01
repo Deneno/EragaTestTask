@@ -1,4 +1,4 @@
-package com.Eraga.model
+package com.eraga.model
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -12,10 +12,10 @@ data class AddressBook(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val address_book_id: Int = 0
-    val name: String
-    val region: String
-    val city: String
-    val contact: List<String>
+    val address_book_id: Int = 0,
+    val name: String,
+    val region: String,
+    val city: String,
+    val contact: List<String>,
     val notes: String
 )

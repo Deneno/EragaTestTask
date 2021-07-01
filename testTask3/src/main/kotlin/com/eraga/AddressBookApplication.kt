@@ -1,4 +1,4 @@
-package com.Eraga
+package com.eraga
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
