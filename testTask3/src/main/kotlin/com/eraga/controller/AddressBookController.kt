@@ -17,16 +17,8 @@ import javax.validation.Valid
 
 
 @RestController
-@RequestMapping("/addressBook", produces = [MediaType.APPLICATION_JSON_VALUE])
+@RequestMapping("/address_book", produces = [MediaType.APPLICATION_JSON_VALUE])
 class AddressBookController(private val addressBookService: AddressBookService) {
-
-    @GetMapping
-    fun findAll() = addressBookService.findAll()
-
-    @GetMapping("/{address_book_id}")
-    fun findById(@PathVariable("address_book_id") address_book_id: Int): AddressBook {
-        return addressBookService.findById(address_book_id)
-    }
 
     @PostMapping
     fun create(@Valid @RequestBody request: SaveAddressBookRequest): StatusResponse {
@@ -49,4 +41,13 @@ class AddressBookController(private val addressBookService: AddressBookService) 
         addressBookService.delete(address_book_id)
         return StatusResponse("Deleted")
     }
+
+    @GetMapping
+    fun findAll() = addressBookService.findAll()
+
+    @GetMapping("/{address_book_id}")
+    fun findById(@PathVariable("address_book_id") address_book_id: Int): AddressBook {
+        return addressBookService.findById(address_book_id)
+    }
+
 }

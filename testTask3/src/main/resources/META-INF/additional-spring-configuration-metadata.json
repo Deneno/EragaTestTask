@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "name": "hibernate.show_sql",
+      "type": "java.lang.String",
+      "description": "Description for hibernate.show_sql."
+    },
+    {
+      "name": "spring.logging.level.org.hibernate.SQL",
+      "type": "java.lang.String",
+      "description": "Description for spring.logging.level.org.hibernate.SQL."
+    },
+    {
+      "name": "spring.logging.level.org.hibernate.type",
+      "type": "java.lang.String",
+      "description": "Description for spring.logging.level.org.hibernate.type."
+    }
+
+  ] }

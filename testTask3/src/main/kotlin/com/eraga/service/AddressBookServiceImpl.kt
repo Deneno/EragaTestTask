@@ -10,15 +10,8 @@ import com.eraga.request.SaveAddressBookRequest
 
 @Service
 class AddressBookServiceImpl(private val addressBookDao: AddressBookDao): AddressBookService {
-
-    override fun findAll(): List<AddressBook> {
-        log.info("Найти все записи")
-        return addressBookDao.findByOrderByName()
-    }
-
-    override fun findById(address_book_id: Int): AddressBook {
-        log.info("Найти имя контакта с id=$address_book_id")
-        return addressBookDao.findByIdOrNull(address_book_id) ?: throw AddressBookNotFoundException(address_book_id)
+    companion object {
+        private val log = LoggerFactory.getLogger(AddressBookServiceImpl::class.java)
     }
 
     override fun create(request: SaveAddressBookRequest) {
@@ -56,7 +49,15 @@ class AddressBookServiceImpl(private val addressBookDao: AddressBookDao): Addres
         addressBookDao.delete(addressBook)
     }
 
-    companion object {
-        private val log = LoggerFactory.getLogger(AddressBookServiceImpl::class.java)
+
+    override fun findAll(): List<AddressBook> {
+        log.info("Найти все записи")
+        return addressBookDao.findByOrderByName()
     }
+
+    override fun findById(address_book_id: Int): AddressBook {
+        log.info("Найти имя контакта с id=$address_book_id")
+        return addressBookDao.findByIdOrNull(address_book_id) ?: throw AddressBookNotFoundException(address_book_id)
+    }
+
 }

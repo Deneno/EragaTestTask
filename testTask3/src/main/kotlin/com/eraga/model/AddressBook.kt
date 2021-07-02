@@ -7,7 +7,7 @@ import javax.persistence.Id
 import javax.persistence.Table
 
 @Entity
-@Table(name = "AddressBook")
+@Table(name = "address_book")
 data class AddressBook(
 
     @Id

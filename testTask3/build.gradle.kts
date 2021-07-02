@@ -8,8 +8,10 @@ plugins {
 	kotlin("plugin.jpa") version "1.5.20"
 }
 
+
+
 group = "com.Eraga"
-version = "0.0.1-SNAPSHOT"
+version = "1.0.0"
 java.sourceCompatibility = JavaVersion.VERSION_16
 
 repositories {
@@ -27,12 +29,14 @@ dependencies {
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }
+
 
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "16"
+		jvmTarget = "1.8"
 	}
 }
 
